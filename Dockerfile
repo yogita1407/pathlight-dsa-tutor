@@ -12,7 +12,7 @@ WORKDIR /app
 
 COPY backend/package*.json ./backend/
 RUN cd backend && npm install --omit=dev
-
+RUN apt-get update && apt-get install -y openjdk-17-jdk-headless && rm -rf /var/lib/apt/lists/*
 COPY backend/ ./backend/
 COPY --from=frontend-build /app/frontend/dist ./frontend/dist
 
