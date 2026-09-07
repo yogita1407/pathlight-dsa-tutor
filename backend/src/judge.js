@@ -110,8 +110,9 @@ function runJava(code, functionName, tests) {
     .join("\n");
   const runner = `import java.lang.reflect.*;
 import java.util.*;
-
+class Solution{
 ${code}
+}
 public class Runner {
   static boolean same(Object a, Object b) {
     if (a == null || b == null) return a == b;
