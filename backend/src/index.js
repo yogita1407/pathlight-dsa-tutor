@@ -312,9 +312,15 @@ app.get("/api/problems", auth, (req, res) => {
     const params = [];
     const conditions = [];
     if (difficulty) {
-      conditions.push("p.difficulty = ?");
-      params.push(difficulty);
-    }
+  const difficultyMap = {
+    Easy: "Beginner",
+    Medium: "Intermediate",
+    Hard: "Advanced",
+  };
+
+  conditions.push("p.difficulty = ?");
+  params.push(difficultyMap[difficulty] || difficulty);
+}
     if (topic) {
       conditions.push(`t.slug IN (${topic.split(",").map(() => "?").join(",")})`);
       params.push(...topic.split(","));
