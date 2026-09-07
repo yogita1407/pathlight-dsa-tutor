@@ -1,0 +1,23 @@
+{
+  "name": "dsa-tutor-api",
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "seed": "node src/seed.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^12.11.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.22.2",
+    "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^10.0.0",
+    "twilio": "^6.1.0"
+  }
+}
