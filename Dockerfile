@@ -17,8 +17,8 @@ COPY backend/ ./backend/
 COPY --from=frontend-build /app/frontend/dist ./frontend/dist
 
 ENV NODE_ENV=production
-ENV PORT=4000
-EXPOSE 4000
+ENV PORT=10000
+EXPOSE 10000
 
 WORKDIR /app/backend
 CMD ["node", "src/index.js"]

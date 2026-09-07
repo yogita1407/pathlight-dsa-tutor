@@ -395,7 +395,8 @@ if (fs.existsSync(path.join(frontendDist, "index.html"))) {
   });
 }
 
-const port = Number(process.env.PORT || 4000);
-app.listen(port, () => {
-  console.log(`Pathlight API on http://localhost:${port}`);
+const port = Number(process.env.PORT || 10000);
+
+app.listen(port, "0.0.0.0", () => {
+  console.log(`Pathlight API running on port ${port}`);
 });
